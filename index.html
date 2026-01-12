@@ -18,26 +18,16 @@
             --border: #333;
         }
         
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: var(--dark-bg);
             color: var(--text);
             line-height: 1.6;
         }
         
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         
         header {
             text-align: center;
@@ -49,475 +39,171 @@
         }
         
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
+            width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 20px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
+            display: flex; align-items: center; justify-content: center; font-size: 60px; overflow: hidden;
         }
+
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; }
         
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2.5em; margin-bottom: 10px;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
+            -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;
         }
         
-        .tagline {
-            font-size: 1.2em;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
+        .tagline { font-size: 1.2em; color: var(--text-muted); margin-bottom: 20px; }
         
-        .intro {
-            max-width: 700px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
+        .intro { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
         
         .intro-item {
-            background: rgba(77, 171, 247, 0.1);
-            padding: 10px 15px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95em;
+            background: rgba(77, 171, 247, 0.1); padding: 10px 15px; border-radius: 50px;
+            display: flex; align-items: center; gap: 8px; font-size: 0.95em;
         }
         
         h2 {
-            font-size: 1.6em;
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 1.6em; margin: 40px 0 20px; padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 10px;
         }
         
         .section {
-            background-color: var(--dark-card);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--dark-card); border-radius: 12px; padding: 25px;
+            margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
         
-        .section:hover {
-            transform: translateY(-5px);
-        }
+        .section:hover { transform: translateY(-5px); }
         
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+        ul { list-style-type: none; padding: 0; }
         
-        li {
-            margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
-        }
+        li { margin-bottom: 10px; padding-left: 25px; position: relative; }
         
-        li:before {
-            content: "•";
-            color: var(--primary);
-            font-weight: bold;
-            position: absolute;
-            left: 10px;
-        }
+        li:before { content: "•"; color: var(--primary); font-weight: bold; position: absolute; left: 10px; }
         
-        .experience-item, .education-item {
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border);
-        }
+        .experience-item { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
+        .experience-item:last-child { border-bottom: none; }
         
-        .experience-item:last-child, .education-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
+        .experience-title { font-size: 1.2em; color: var(--primary); margin-bottom: 5px; display: block; }
+        .experience-company { font-weight: bold; margin-bottom: 4px; display: block; }
+        .experience-date { font-size: 0.85em; color: var(--secondary); margin-bottom: 8px; display: block; }
         
-        .experience-title {
-            font-size: 1.2em;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-        
-        .experience-company {
-            font-weight: bold;
-            margin-bottom: 8px;
-            display: block;
-        }
-        
-        .experience-details {
-            color: var(--text-muted);
-            font-size: 0.95em;
-        }
-        
-        .toggle {
-            background-color: var(--darker-card);
-            border-radius: 8px;
-            margin: 10px 0;
-            padding: 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: background-color 0.3s ease;
-        }
-        
-        .toggle:hover {
-            background-color: rgba(77, 171, 247, 0.2);
-        }
-        
-        .toggle i {
-            transition: transform 0.3s ease;
-        }
-        
-        .toggle.active i {
-            transform: rotate(90deg);
-        }
-        
-        .toggle-content {
-            display: none;
-            padding: 15px;
-            background-color: var(--darker-card);
-            border-radius: 0 0 8px 8px;
-            margin-top: -10px;
-            margin-bottom: 10px;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; }
         .skill-item {
-            background-color: var(--darker-card);
-            padding: 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: transform 0.3s ease;
+            background-color: var(--darker-card); padding: 15px; border-radius: 8px;
+            display: flex; align-items: center; gap: 10px;
         }
         
-        .skill-item:hover {
-            transform: translateY(-3px);
-        }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; padding: 15px; background-color: var(--darker-card); border-radius: 8px; }
+        .contact-icon { width: 40px; height: 40px; background: linear-gradient(45deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
         
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background-color: var(--darker-card);
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            transform: translateY(-3px);
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        }
-        
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--secondary);
-            text-decoration: underline;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border);
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            header {
-                padding: 30px 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .skills-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .intro {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+        a { color: var(--primary); text-decoration: none; }
+        footer { text-align: center; padding: 30px 0; color: var(--text-muted); border-top: 1px solid var(--border); }
     </style>
-    <script>
-        function toggleContent(id) {
-            const content = document.getElementById(id);
-            const toggle = content.previousElementSibling;
-            
-            if (content.style.display === "block") {
-                content.style.display = "none";
-                toggle.classList.remove('active');
-            } else {
-                content.style.display = "block";
-                toggle.classList.add('active');
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="profile-img">
-            <img src="1754068123479.png" alt="Jamal Al-shrjabe" />            
+                <img src="1754068123479.png" alt="Jamal Al-shrjabe" />            
             </div>
-            <h1>Jamal Al-shrjabe</h1>
-            <p class="tagline">Software & IT Engineer</p>
+            <h1>Jamal Samer Jamal ALshrjabe</h1>
+            <p class="tagline">AI Engineer @ Sofa | Game Developer @ Nerd Magic Games</p>
             <div class="intro">
-                <div class="intro-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <span>IT Professional</span>
-                </div>
-                <div class="intro-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Cybersecurity Specialist</span>
-                </div>
-                <div class="intro-item">
-                    <i class="fas fa-brain"></i>
-                    <span>AI & Automation Enthusiast</span>
-                </div>
+                <div class="intro-item"><i class="fas fa-brain"></i><span>AI Engineering</span></div>
+                <div class="intro-item"><i class="fas fa-gamepad"></i><span>Game Development</span></div>
+                <div class="intro-item"><i class="fas fa-shield-alt"></i><span>Cybersecurity</span></div>
             </div>
         </header>
 
         <section class="section">
-            <h2><i class="fas fa-briefcase"></i> Experience</h2>
-            <ul>
-                <li>
-                    <span class="experience-title">IT Project Supervisor</span>
-                    <span class="experience-company">22 May Police Department, Taiz</span>
-                    <div class="experience-details">
-                        Computerized police department operations and streamlined workflows with digital solutions.
-                    </div>
-                </li>
-                <li>
-                    <span class="experience-title">Data Analyst Intern</span>
-                    <span class="experience-company">Grant Thornton Co.</span>
-                    <div class="experience-details">
-                        Managed and analyzed datasets, produced insights and reports for better decision-making.
-                    </div>
-                </li>
-                <li>
-                    <span class="experience-title">Freelance IT Technician & Consultant</span>
-                    <div class="experience-details">
-                        Computer & network maintenance, data recovery, surveillance system installation, internet café management, and Python automation solutions.
-                    </div>
-                </li>
-            </ul>
+            <h2><i class="fas fa-rocket"></i> Current Positions</h2>
+            <div class="experience-item">
+                <span class="experience-title">AI Engineer</span>
+                <span class="experience-company">Sofa</span>
+                <span class="experience-date">Present</span>
+            </div>
+            <div class="experience-item">
+                <span class="experience-title">Game Developer</span>
+                <span class="experience-company">Nerd Magic Games</span>
+                <span class="experience-date">Present</span>
+            </div>
         </section>
 
         <section class="section">
-            <h2><i class="fas fa-code-branch"></i> Projects</h2>
+            <h2><i class="fas fa-history"></i> Professional History</h2>
             
-            <div class="toggle" onclick="toggleContent('project1')">
-                <span><i class="fas fa-building"></i> Police Department Digital Transformation</span>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div id="project1" class="toggle-content">
-                Implemented a computerized system to reduce paperwork & improve efficiency.
-            </div>
-
-            <div class="toggle" onclick="toggleContent('project2')">
-                <span><i class="fas fa-video"></i> Network & Surveillance Deployment</span>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div id="project2" class="toggle-content">
-                Built secure LAN networks & CCTV systems for institutions & businesses.
+            <div class="experience-item">
+                <span class="experience-title">IT Support Specialist</span>
+                <span class="experience-company">HSA Nadfood IT Department</span>
+                <span class="experience-date">2025/09/29 - 2025/10/27</span>
+                <div class="experience-details">
+                    <ul>
+                        <li>Provided first-line technical support for IT infrastructure and internal users, including SAP Systems.</li>
+                        <li>Managed network maintenance and hardware troubleshooting.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="toggle" onclick="toggleContent('project3')">
-                <span><i class="fas fa-hdd"></i> Data Recovery Solutions</span>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div id="project3" class="toggle-content">
-                Restored critical data from damaged external drives for multiple clients.
-            </div>
-
-            <div class="toggle" onclick="toggleContent('project4')">
-                <span><i class="fab fa-python"></i> Python Automation Tools</span>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div id="project4" class="toggle-content">
-                Developed automation scripts for system monitoring & data analysis.
+            <div class="experience-item">
+                <span class="experience-title">Data Analyst (Intern)</span>
+                <span class="experience-company">Grant Thornton Co.</span>
+                <span class="experience-date">3 Months</span>
+                <div class="experience-details">
+                    <ul>
+                        <li>Analyzed and managed large datasets to support executive decision-making.</li>
+                        <li>Developed insightful reports and visualizations.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="toggle" onclick="toggleContent('project5')">
-                <span><i class="fas fa-wifi"></i> Internet Café Management Systems</span>
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div id="project5" class="toggle-content">
-                Deployed networks, billing, and security systems for Internet cafés.
+            <div class="experience-item">
+                <span class="experience-title">IT Project Supervisor</span>
+                <span class="experience-company">22 May Police Department, Taiz</span>
+                <div class="experience-details">
+                    <ul>
+                        <li>Spearheaded a digital transformation project to computerize police department operations.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section class="section">
-            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-            <div class="education-item">
-                <span class="experience-title">Bachelor's Degree in Information Technology</span>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2><i class="fas fa-certificate"></i> Certifications & Courses</h2>
-            <ul>
-                <li>CCNA (Cisco Certified Network Associate)</li>
-                <li>Linux Certification (NDG)</li>
-                <li>Professional IT Support — Google & Kiron German Group</li>
-                <li>ICDL (International Computer Driving License)</li>
-                <li>SPSS Certification</li>
-                <li>Introduction to Modern AI — Cisco Networking Academy (2025)</li>
-                <li>OOP in Java — Kiron (2025)</li>
-                <li>Computer Networks — Kiron (2025)</li>
-                <li>Communication, Critical Thinking & Leadership Certificates</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2><i class="fas fa-tools"></i> Skills</h2>
+            <h2><i class="fas fa-tools"></i> Skills & Tech Stack</h2>
             <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-network-wired"></i>
-                    <span>Computer & Network Maintenance</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-lock"></i>
-                    <span>Network Security & Administration</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-headset"></i>
-                    <span>IT Support & Troubleshooting</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-linux"></i>
-                    <span>Linux Administration</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-python"></i>
-                    <span>Python Programming</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <span>Data Analysis (SPSS)</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Cybersecurity & Data Encryption</span>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-robot"></i>
-                    <span>AI & Machine Learning Fundamentals</span>
-                </div>
+                <div class="skill-item"><i class="fas fa-brain"></i><span>AI & Machine Learning</span></div>
+                <div class="skill-item"><i class="fas fa-unity"></i><span>Game Development</span></div>
+                <div class="skill-item"><i class="fab fa-python"></i><span>Python Automation</span></div>
+                <div class="skill-item"><i class="fas fa-network-wired"></i><span>Cisco Networking</span></div>
+                <div class="skill-item"><i class="fas fa-database"></i><span>Data Analysis (SPSS)</span></div>
+                <div class="skill-item"><i class="fas fa-shield-alt"></i><span>Cybersecurity</span></div>
             </div>
         </section>
 
         <section class="section">
-            <h2><i class="fas fa-language"></i> Languages</h2>
-            <ul>
-                <li>Arabic — Native</li>
-                <li>English — Intermediate</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
             <div class="contact-grid">
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                        <div>Sana'a, Yemen</div>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
                     <div>
                         <div>+967 738764323</div>
                         <div>+967 774244644</div>
                     </div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <a href="mailto:alshrjabej@gmail.com">alshrjabej@gmail.com</a>
-                    </div>
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div><a href="mailto:alshrjabej@gmail.com">alshrjabej@gmail.com</a></div>
                 </div>
                 <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <a href="https://www.linkedin.com/in/jamal-al-shrjabe-10a060247/" target="_blank">LinkedIn Profile</a>
-                    </div>
+                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div><a href="https://www.linkedin.com/in/jamal-al-shrjabe-10a060247/" target="_blank">LinkedIn Profile</a></div>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>© 2023 Jamal Al-shrjabe. All rights reserved.</p>
+            <p>© 2026 Jamal Samer Jamal ALshrjabe. All rights reserved.</p>
         </footer>
     </div>
 </body>
 </html>
-
